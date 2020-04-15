@@ -14,7 +14,7 @@ public class PersonSpliterator implements Spliterator<Person> {
     }
 
     @Override
-    public boolean tryAdvance(Consumer<? super Person> action) {
+    public boolean tryAdvance(Consumer<? super Person> action) {//this returns false if no otjer lines to read
         if (this.lineSpliterator.tryAdvance(line-> this.name = line) &&
         this.lineSpliterator.tryAdvance(line-> this.age = Integer.parseInt(line)) &&
         this.lineSpliterator.tryAdvance(line-> this.city = line)){

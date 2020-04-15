@@ -13,7 +13,7 @@ public class SpliteratorUsage {
 
     public static void main(String[] args){
 
-        Path path = Paths.get("people.txt");
+        Path path = Paths.get("/Users/home/Documents/StreamsAndCollectors/src/main/resources/people.txt");
         try (Stream<String> lines = Files.lines(path)) {
             Spliterator<String> lineSpliterator =lines.spliterator();
             Spliterator<Person> peopleSpliterator = new PersonSpliterator(lineSpliterator);
