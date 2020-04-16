@@ -16,7 +16,10 @@ public class StreamPatterns {
         //Stream<String> streamOfLines = streamOfStreams.flatMap(stream->stream); //faster way
         // Function.identity() instead of stream -> stream
         Function <String, Stream<String>> lineSplitter = line-> Pattern.compile(" ").splitAsStream(line);
-        Stream<String> streamOfWords = bookStreamOfLines.flatMap(lineSplitter).map(word->word.toLowerCase()).distinct();
+        Stream<String> streamOfWords = bookStreamOfLines.flatMap(lineSplitter).
+                map(word->word.toLowerCase()).
+                filter(word->word.length()==4).
+                distinct();
         System.out.println("#words: " + streamOfWords.count());
 
 
