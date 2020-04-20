@@ -32,7 +32,7 @@ public class StreamPatternsForNumbers {
 
 
         System.out.println("score of hi: " + intScore.applyAsInt("hi"));
-        System.out.println("score of hi: " + score.apply("hj"));
+        System.out.println("score of hj: " + score.apply("hj"));
 
         String word =shWords.stream()
                 .filter(existingWord->scrabbleWords.contains(existingWord))
@@ -42,10 +42,14 @@ public class StreamPatternsForNumbers {
 
         IntSummaryStatistics summaryStatistics =
                 shWords.stream().parallel()
-                .filter(scrabbleWords::contains)
+                .filter(scrabbleWords::contains)//el->scrabbleWords.contains(el)
                 .mapToInt(intScore)
                 .summaryStatistics();
         System.out.println("Stats: " +summaryStatistics);
+
+        //Advanced Use of Optionals:
+        //data processing pipeline
+
 
 
 
