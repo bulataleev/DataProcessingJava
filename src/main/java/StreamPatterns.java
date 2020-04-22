@@ -14,7 +14,7 @@ public class StreamPatterns {
         //Stream of streams
         //# Stream <Stream<String>> streamOfStreams = Stream.of(stream1,s2,s3);
         //Stream<String> streamOfLines = streamOfStreams.flatMap(stream->stream); //faster way
-        // Function.identity() instead of stream -> stream
+        // 'Function.identity()' instead of 'stream -> stream'
         Function <String, Stream<String>> lineSplitter = line-> Pattern.compile(" ").splitAsStream(line);
         Stream<String> streamOfWords = bookStreamOfLines.flatMap(lineSplitter).
                 map(word->word.toLowerCase()).

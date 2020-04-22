@@ -6,7 +6,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class ErrorlessPipelineProcessing {
+public class ErrorlessPipelineDataProcessing {
 
     public static void main(String... args){
         //this is how optional should be used
@@ -46,5 +46,4 @@ public class ErrorlessPipelineProcessing {
 
 
     }
-
 }

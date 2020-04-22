@@ -1,3 +1,5 @@
+package model;
+
 import model.Person;
 
 import java.util.Spliterator;
